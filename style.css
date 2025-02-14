@@ -1,0 +1,187 @@
+#Div {
+    z-index: -2;
+    margin-top: -45%;
+}
+#Kids {
+    margin-bottom: -10rem;
+}
+#BG {
+    background-color: #faf9f6;
+}
+#footer {
+    background-color: #faf9f6
+}
+#button {
+    background-color: #181818;
+}
+#Button-2 {
+    background-color: #181818;
+}
+.section2 {
+    display: inline-flex;
+}
+#Name {
+    font-weight: 500;
+}
+#Price {
+    font-weight: 100;
+    font-size: 1rem;
+}
+#Shop:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+body {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    background-color: #F4F4F4;
+    color: #181818;
+}
+.logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.Section {
+    position: relative;
+    text-align: center;
+    
+}
+.Section .test {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 155px;
+    font-weight: bold;
+    color: rgba(74, 76, 108, 0.13);
+    z-index: -1;
+    font-family: 'Teko';
+    font-weight: 900;
+    width: 100%;
+
+}
+#Shoe {
+    background-color: #E9E9EB;
+}
+.top-left {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    font-size: 34px;
+    color: #181818;
+    font-family: 'Teko', sans-serif;
+}
+.bottom-right {
+    position: absolute;
+    bottom: 25%;
+    right: 25%;
+    font-size: 34px;
+    color: #181818;
+    font-family: 'Teko', sans-serif;
+}
+.famous-shoes-container, .famous-shoes-2 {
+    position: relative;
+    text-align: center;
+    margin-top: 2rem;
+}
+.famous-shoes-container img, .famous-shoes-2 img {
+    width: 618px;
+    height: 831px;
+}
+.famous-shoes-container .text-overlay, .famous-shoes-2 .text-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-align: left;
+}
+.famous-shoes-container h2, .famous-shoes-2 h2 {
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+}
+.famous-shoes-container button, .famous-shoes-2 button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+.best-selling h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #F4F4F4;
+    -webkit-text-stroke: 1px black;
+}
+.best-selling p {
+    display: inline;
+    font-size: 48px;
+    font-weight: bold;
+    color: black;
+}
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+body {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    background-color: #FAF9F6;
+    color: #181818;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+.quantity-controls button {
+    background-color: #181818;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.quantity-controls span {
+    margin: 0 10px;
+}
+.remove-item {
+    cursor: pointer;
+    color: red;
+    margin-left: 10px;
+}
+.total-cost {
+    text-align: right;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+.total-cost span {
+    color: #181818;
+}

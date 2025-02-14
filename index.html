@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/679cb61b97.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="bg-white text-black py-6 border-t border-gray-300 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-6 lg:px-16">
+            <nav>
+                <ul class="flex space-x-6 text-gray-700 font-medium text-lg">
+                    <li class="hover:text-gray-900 transition cursor-pointer">Women</li>
+                    <li class="hover:text-gray-900 transition cursor-pointer">Men</li>
+                    <li class="hover:text-gray-900 transition cursor-pointer">Kids</li>
+                    <li class="hover:text-gray-900 transition cursor-pointer">Classic</li>
+                </ul>
+            </nav>
+            <div class="logo-container">
+                <img src="https://loodibee.com/wp-content/uploads/Nike-Logo.png" alt="Logo" class="w-14 h-14">
+            </div>
+            <div class="flex space-x-5 text-gray-700 relative">
+                <i data-feather="user" class="hover:text-gray-900 transition cursor-pointer"></i>
+                <a href="cart.html" class="relative">
+                    <i data-feather="shopping-cart" class="hover:text-gray-900 transition cursor-pointer"></i>
+                    <div id="cart-count" class="cart-count">0</div>
+                </a>
+                <div class="relative">
+                    <i data-feather="heart" class="hover:text-gray-900 transition cursor-pointer"></i>
+                    <div id="like-count" class="cart-count">0</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="Section">
+        <h1 class="test">TRAVIS SCOTT</h1>
+        <img src="imgs/AirJordan1LowOGxTravisScottSPOlive.webp" alt="Travis X Nike" class="w-1/2 h-1/4 mx-auto relative z-10">
+        <h1 class="top-left">LIMITED STOCK</h1>
+        <h1 class="bottom-right">COMFY</h1>
+    </div>
+    <div class="best-selling text-left mt-20 ml-20">
+        <h1>OUR <p>BEST</p> SHOES</h1>
+    </div>
+    <div class="Shoes flex flex-wrap justify-center w-2/3 mt-8 mx-auto">
+    </div>
+    
+    <div class="Line flex justify-center">
+        <div class="border-t-2 w-10/12 mt-4"></div>
+    </div>
+
+    <div class="famous-shoes flex justify-center space-x-8">
+        <div class="famous-shoes-container">
+            <img src="imgs/TravisScott-WooHah-Sun-NME-DB-9545-1.jpg" alt="Nike X Travis Scott">
+            <div class="text-overlay mb-24">
+                <h2>Nike X Travis Scott</h2>
+                <button id="Shop">Shop Now</button>
+            </div>
+        </div>
+
+        <div class="famous-shoes-2 mt-8">
+            <img class="mt-24" src="imgs/https___hypebeast.com_wp-content_blogs.dir_6_files_2020_10_nike-travis-scott-collaboration-air-jordan-1-high-reverse-white-brown-colorway-on-feet-1.avif" alt="Travis X Nike">
+            <div class="text-overlay">
+                <h2>Special Shoes</h2>
+                <button id="Shop">Shop Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="best-selling text-left mt-20 ml-20">
+        <h1>BEST <p>SELL</p>ING</h1>
+    </div>
+    <div class="BestSellingShoes flex flex-wrap justify-center w-2/3 mt-8 mx-auto">
+    </div>
+    <button id="button" class="relative text-white flex justify-center items-center px-5 py-3 gap-2 w-1/6 h-12 mx-auto mt-10 z-[5]">SHOP NOW</button>
+
+
+    <div class="p-1">
+        <div class="kids relative w-full h-[495px] overflow-hidden -mt-96" id="Div">
+            <div id="BG" class="absolute top-0 left-0 w-full h-1/2 z-0"></div>
+            <img src="imgs/Stormy.jpg" alt="Stormy" class="w-full h-full object-cover object-bottom">
+            <button id="button" class="text-white flex justify-center items-center px-5 py-3 gap-2 w-1/3 h-12 absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">KIDS</button>
+        </div>
+    </div>
+    <div class="flex">
+        <div class="women relative w-1/2 h-[495px] overflow-hidden p-1" id="Women">
+            <div id="BG-2" class="absolute top-0 left-0 w-full h-full z-0"></div>
+            <img src="imgs/df6d7cf1-46c5-4ecd-b0f4-19f91a56bb10.avif" alt="Women" class="w-full h-full object-cover object-bottom">
+            <button id="Button-2" class="text-white flex justify-center items-center px-5 py-3 gap-2 w-1/3 h-12 absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">WOMENS</button>
+        </div>
+        <div class="men relative w-1/2 h-[495px] overflow-hidden p-1" id="Men">
+            <div id="BG-2" class="absolute top-0 left-0 w-full h-full z-0"></div>
+            <img src="imgs/5-16.webp" alt="Women" class="w-full h-full object-cover object-bottom">
+            <button id="Button-2" class="text-white flex justify-center items-center px-5 py-3 gap-2 w-1/3 h-12 absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">MENS</button>
+        </div>
+    </div>
+
+
+
+    <div class="bg-white dark:bg-gray-900 mt-10" id="footer">
+        <div class="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+            <div>
+              <div>
+                <img class="h-8" src="https://loodibee.com/wp-content/uploads/Nike-Logo.png"</img>
+              </div>
+      
+              <p class="mt-4 max-w-xs text-gray-700 dark:text-gray-500 text-left">
+                Nike is a global sportswear brand known for its innovative athletic shoes, apparel, and equipment. Founded in 1964, it has become a leader in the industry with its iconic "Just Do It" slogan and swoosh logo.
+
+
+
+
+
+
+
+
+              </p>
+      
+              <ul class="mt-8 flex gap-6">
+                <li>
+                  <a
+                    href="https://www.youtube.com/@creatoron_wheels"
+                    target="_blank"
+                    class="text-gray-700 dark:text-gray-200 transition hover:opacity-50 dark:hover:opacity-75"
+                  >
+                    <span class="sr-only">YouTube</span>
+      
+                    <svg class="size-6" fill="currentColor" viewBox="0 0 16 16" class="bi bi-youtube" aria-hidden="true">
+                    <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+                  </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+    
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4 text-left">
+              <div>
+                <p class="font-medium text-gray-900 dark:text-gray-500">Resources</p>
+      
+                <ul class="mt-6 space-y-4 text-sm">
+                  <li>
+                    <a href="#Giftcards" class="text-gray-700 dark:text-gray-400 transition hover:opacity-75"> Gift Cards </a>
+                  </li>
+      
+                  <li>
+                    <a href="#Stores" target="_blank" class="text-gray-700 dark:text-gray-400 transition hover:opacity-75"> Find a Store </a>
+                  </li>
+      
+                  <li>
+                    <a href="#membership" class="text-gray-700 dark:text-gray-400 transition hover:opacity-75"> Membership </a>
+                  </li>
+      
+                  <li>
+                    <a href="#Payment" class="text-gray-700 dark:text-gray-400 transition hover:opacity-75"> Payment Options </a>
+                  </li>
+                </ul>
+              </div>
+      
+              <div>
+                <p class="font-medium text-gray-900 dark:text-gray-500">Company</p>
+                <ul class="mt-6 space-y-4 text-sm">
+                  <li>
+                    <a href="#About" class="text-gray-700 dark:text-gray-400 transition hover:opacity-75"> About Nike </a>
+                  </li>
+      
+                  <li>
+                    <a href="#News" class="text-gray-700 dark:text-gray-400 transition hover:opacity-75"> News </a>
+                  </li>
+      
+                  <li>
+                    <a href="#Careers" class="text-gray-700 dark:text-gray-400 transition hover:opacity-75"> Careers </a>
+                  </li>
+                </ul>
+              </div>
+      
+              <div>
+                <p class="font-medium text-gray-900 dark:text-gray-500">Help</p>
+      
+                <ul class="mt-6 space-y-4 text-sm">
+                  <li>
+                    <a href="#Help" class="text-gray-700 dark:text-gray-400 transition hover:opacity-75"> Get Help </a>
+                  </li>
+      
+                  <li>
+                    <a href="#Status" class="text-gray-700 dark:text-gray-400 transition hover:opacity-75"> Order Status </a>
+                  </li>
+                </ul>
+              </div>
+      
+              <div>
+                <p class="font-medium text-gray-900 dark:text-gray-500">Legal</p>
+      
+                <ul class="mt-6 space-y-4 text-sm">
+                  <li>
+                    <a href="#Policy" class="text-gray-700 dark:text-gray-400 transition hover:opacity-75"> Privacy Policy </a>
+                  </li>
+      
+                  <li>
+                    <a href="#Tos" class="text-gray-700 dark:text-gray-400 transition hover:opacity-75"> Terms Of Service </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+
+    
+    <script>
+        feather.replace()
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

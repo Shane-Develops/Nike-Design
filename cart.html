@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            background-color: #FAF9F6;
+            color: #181818;
+        }
+        .sticky-sidebar {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+        .scrollable-content {
+            overflow-y: auto;
+            max-height: calc(100vh - 2rem);
+        }
+    </style>
+</head>
+<body>
+    <div class="flex h-screen">
+        <div class="w-1/4 bg-white p-6 shadow-lg flex flex-col justify-between sticky-sidebar">
+            <div>
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="https://loodibee.com/wp-content/uploads/Nike-Logo.png" alt="Logo" class="w-14 h-14">
+                    <span class="text-xl font-bold">Nike Store</span>
+                </a>
+                <h2 class="mt-6 text-lg font-bold">Cart Summary</h2>
+                <div id="cart-summary" class="mt-4 text-gray-700">
+                    <p>Subtotal: <span id="subtotal">$0.00</span></p>
+                    <p>Tax (6%): <span id="tax">$0.00</span></p>
+                    <p class="font-bold">Total: <span id="total">$0.00</span></p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-3">Cart Items</h3>
+                <div id="cart-items-list" class="overflow-auto max-h-48"></div>
+            </div>
+        </div>
+        <div class="w-3/4 p-10 scrollable-content">
+            <h1 class="text-3xl font-bold mb-6">Shopping Cart</h1>
+            <div id="cart-items-container" class="bg-white p-6 rounded-lg shadow-md mb-6"></div>
+            <button type="submit" class="mt-4 bg-black text-white py-2 px-4 rounded w-full flex items-center justify-center space-x-2">
+                <img src="imgs/images.png" alt="Apple Pay" class="h-6">
+                <span>Pay with Apple</span>
+            </button>
+            
+            <div class="flex items-center mt-4">
+                <hr class="flex-grow border-t border-gray-300">
+                <span class="px-4 text-gray-500">Or With Card</span>
+                <hr class="flex-grow border-t border-gray-300">
+            </div>
+            <div class="rounded-lg max-w-md">
+                <h2 class="text-2xl font-bold mb-4">Payment Details</h2>
+                <form id="payment-form" action="receipt.php" method="POST">
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Email Address</label>
+                        <input type="email" name="email" class="w-full shadow flex flex-col justify-center items-start border-2 border-solid border-gray-600 py-2 px-4 block" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Country</label>
+                        <select id="country" class="w-full shadow flex flex-col justify-center items-start border-2 border-solid border-gray-600 py-2 px-4 block" required>
+                            <option value="">Select Country</option>
+                            <option value="US">United States</option>
+                            <option value="CA">Canada</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Cardholder Name</label>
+                        <input type="text" name="name" class="w-full shadow flex flex-col justify-center items-start border-2 border-solid border-gray-600 py-2 px-4 block" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Card Number</label>
+                        <input type="text" name="card_number" class="w-full shadow flex flex-col justify-center items-start border-2 border-solid border-gray-600 py-2 px-4 block" placeholder="**** **** **** ****" required maxlength="19" pattern="\d{4} \d{4} \d{4} \d{4}">
+                    </div>
+                    <div class="flex space-x-4">
+                        <div class="w-1/2">
+                            <label class="block text-gray-700">Expiry Date</label>
+                            <input type="text" name="expiry_date" class="w-full shadow flex flex-col justify-center items-start border-2 border-solid border-gray-600 py-2 px-4 block" placeholder="MM/YY" required maxlength="5" pattern="\d{2}/\d{2}">
+                        </div>
+                        <div class="w-1/2">
+                            <label class="block text-gray-700">CVC</label>
+                            <input type="text" name="cvc" class="w-full shadow flex flex-col justify-center items-start border-2 border-solid border-gray-600 py-2 px-4 block" placeholder="***" required maxlength="3" pattern="\d{3}">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Address</label>
+                        <input type="text" name="address" id="autocomplete" class="w-full shadow flex flex-col justify-center items-start border-2 border-solid border-gray-600 py-2 px-4 block" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Zip Code</label>
+                        <input type="text" name="zip_code" id="zip" class="w-full shadow flex flex-col justify-center items-start border-2 border-solid border-gray-600 py-2 px-4 block" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">State/Province</label>
+                        <input type="text" name="state" id="state" class="w-full shadow flex flex-col justify-center items-start border-2 border-solid border-gray-600 py-2 px-4 block" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">City</label>
+                        <input type="text" name="city" id="city" class="w-full shadow flex flex-col justify-center items-start border-2 border-solid border-gray-600 py-2 px-4 block" required>
+                    </div>
+                    <div class="mb-4 flex items-center">
+                        <label class="block text-gray-700 mr-2">Billing Address Same as Shipping</label>
+                        <input type="checkbox" class="shadow border-2 border-solid border-gray-600 py-2 px-4">
+                    </div>
+                    <input type="hidden" name="cart" id="cart-data">
+                    <button type="submit" class="mt-4 bg-black text-white py-2 px-4 rounded w-full">Pay Now (<span id="total-amount">$0.00</span>)</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3zpoFi_2ea6zwm-b6ifaF6Ir_yFuObHM&libraries=places"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items-container');
+            const cartItemsList = document.getElementById('cart-items-list');
+            const subtotalElement = document.getElementById('subtotal');
+            const taxElement = document.getElementById('tax');
+            const totalElement = document.getElementById('total');
+
+            function updateCart() {
+                cartItemsContainer.innerHTML = '';
+                cartItemsList.innerHTML = '';
+                let subtotal = 0;
+                
+                cart.forEach((item, index) => {
+                    let itemTotal = parseFloat(item.price.replace('$', '')) * item.quantity;
+                    subtotal += itemTotal;
+                    const listItem = document.createElement('p');
+                    listItem.textContent = `${item.name} x${item.quantity} - $${itemTotal.toFixed(2)}`;
+                    cartItemsList.appendChild(listItem);
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'flex justify-between items-center p-4 border-b';
+                    cartItem.innerHTML = `
+                        <div class="flex items-center">
+                            <img src="${item.image}" class="w-16 h-16 object-cover rounded mr-4">
+                            <p class="text-lg font-bold">${item.name}</p>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <select class="border p-1" data-index="${index}">
+                                ${Array.from({ length: 10 }, (_, i) => `<option value="${i+1}" ${item.quantity === i+1 ? 'selected' : ''}>${i+1}</option>`).join('')}
+                            </select>
+                            <p class="text-lg font-bold">$${itemTotal.toFixed(2)}</p>
+                        </div>
+                    `;
+                    
+                    cartItemsContainer.appendChild(cartItem);
+                });
+                
+                let tax = subtotal * 0.06;
+                let total = subtotal + tax;
+                subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+                taxElement.textContent = `$${tax.toFixed(2)}`;
+                totalElement.textContent = `$${total.toFixed(2)}`;
+                document.getElementById('total-amount').textContent = `$${total.toFixed(2)}`;
+            }
+
+            cartItemsContainer.addEventListener('change', (event) => {
+                if (event.target.tagName === 'SELECT') {
+                    const index = event.target.getAttribute('data-index');
+                    cart[index].quantity = parseInt(event.target.value);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    updateCart();
+                }
+            });
+
+            const cardNumberInput = document.querySelector('input[placeholder="**** **** **** ****"]');
+            const expiryDateInput = document.querySelector('input[placeholder="MM/YY"]');
+            const cvvInput = document.querySelector('input[placeholder="***"]');
+
+            cardNumberInput.addEventListener('input', (e) => {
+                e.target.value = e.target.value.replace(/\D/g, '').replace(/(\d{4})(?=\d)/g, '$1 ').trim();
+            });
+
+            expiryDateInput.addEventListener('input', (e) => {
+                e.target.value = e.target.value.replace(/\D/g, '').replace(/(\d{2})(?=\d)/g, '$1/').trim();
+            });
+
+            cvvInput.addEventListener('input', (e) => {
+                e.target.value = e.target.value.replace(/\D/g, '').trim();
+            });
+
+            const paymentForm = document.getElementById('payment-form');
+            const cartDataInput = document.getElementById('cart-data');
+
+            paymentForm.addEventListener('submit', () => {
+                cartDataInput.value = JSON.stringify(cart);
+                localStorage.removeItem('cart');
+            });
+
+            localStorage.removeItem('address');
+            localStorage.removeItem('city');
+            localStorage.removeItem('state');
+            localStorage.removeItem('zip');
+
+            const autocomplete = new google.maps.places.Autocomplete(
+                document.getElementById('autocomplete'),
+                { types: ['geocode'] }
+            );
+
+            autocomplete.addListener('place_changed', () => {
+                const place = autocomplete.getPlace();
+                if (!place.address_components) return;
+                const addressComponents = place.address_components;
+                let streetNumber = '';
+                let route = '';
+                let city = '';
+                let state = '';
+                let zip = '';
+
+                addressComponents.forEach(component => {
+                    const types = component.types;
+                    if (types.includes('street_number')) {
+                        streetNumber = component.long_name;
+                    }
+                    if (types.includes('route')) {
+                        route = component.long_name;
+                    }
+                    if (types.includes('locality')) {
+                        city = component.long_name;
+                    }
+                    if (types.includes('administrative_area_level_1')) {
+                        state = component.short_name;
+                    }
+                    if (types.includes('postal_code')) {
+                        zip = component.long_name;
+                    }
+                });
+
+                document.getElementById('autocomplete').value = `${streetNumber} ${route}`;
+                document.getElementById('city').value = city;
+                document.getElementById('state').value = state;
+                document.getElementById('zip').value = zip;
+
+                localStorage.setItem('address', document.getElementById('autocomplete').value);
+                localStorage.setItem('city', city);
+                localStorage.setItem('state', state);
+                localStorage.setItem('zip', zip);
+            });
+
+            updateCart();
+            feather.replace();
+        });
+    </script>
+</body>
+</html>
