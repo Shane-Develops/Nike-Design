@@ -1,2 +1,0 @@
-To Do List:
-    - Fix duplication of liking (If you like and refersh it will keep the original like and keep adding likes.)
