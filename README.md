@@ -1,15 +1,5 @@
 <h1 align="center">🚀 Nike x Travis Scott Redesign</h1>
 <h3 align="center">Design & Development | PHP, JS, HTML, CSS, TailwindCSS</h3>
-
-<p align="center">
-  <a href="https://linkproject.com" target="_blank">
-    <img src="https://img.shields.io/badge/Project-Link-blue?style=for-the-badge" alt="Project Link"/>
-  </a>
-  <a href="https://shanewolford.com" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-Shane%20Wolford-green?style=for-the-badge" alt="Portfolio"/>
-  </a>
-</p>
-
 ---
 
 ## 🛠️ Tech Stack
@@ -26,7 +16,7 @@
 ---
 
 ## 🌎 Live Demo
-🔗 **Check out the project:** [Nike Redesign](https://linkproject.com)
+🔗 **Check out the project:** [Nike Redesign](https://shane-develops.github.io/Nike-Design/)
 
 ---
 
