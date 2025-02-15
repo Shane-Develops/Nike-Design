@@ -4,7 +4,6 @@
 
 ## 🛠️ Tech Stack
 - **Languages & Frameworks:** PHP, JavaScript, HTML, CSS, TailwindCSS
-- **Design Tools:** Photoshop
 - **Version Control:** Git & GitHub
 
 ## ✨ Features
