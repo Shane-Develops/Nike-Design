@@ -52,7 +52,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 155px;
+    font-size: 12.5vw;
     font-weight: bold;
     color: rgba(74, 76, 108, 0.13);
     z-index: -1;
