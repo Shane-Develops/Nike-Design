@@ -15,7 +15,7 @@
 
 ---
 
-## 🌎 Live Demo
+## 🌎 Live Demo (Without PHP)
 🔗 **Check out the project:** [Nike Redesign](https://shane-develops.github.io/Nike-Design/)
 
 ---
